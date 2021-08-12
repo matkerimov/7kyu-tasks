@@ -179,21 +179,25 @@
 //     Age is represented by a number which can be any positive integer.
 //     Lastname will always be one upper-cased letter followed by dot, e.g. 'N.'
 // Order of the objects in the array should be maintained but order of the properties in the individual objects does not matter.
+// let now = new Date()  // // let year = now.getFullYear()  // // console.log( year -30)
 // ----------------------------------------------------
-function addUsername(list) {
-    let year = new Date().getFullYear()
-    // let year = now.getFullYear()
-    return list.map(item => item.firstName.toLowerCase() + item.lastName[0].toLowerCase() + `${year - item.age}`  )
-}
-console.log(addUsername([
-    { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
-    { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' },
-    // {"firstName":"Harry","lastName":"K.","country":"Brazil","continent":"Americas","age":19,"language":"Python"}
-]))
+// function addUsername(list) {
+//     let year = new Date().getFullYear()
+//     // let year = now.getFullYear()
+//     return list.map((item )=> item.username = item.firstName.toLowerCase() + item.lastName[0].toLowerCase() + `${year - item.age}`)
+// }
+// function addUsername(list) {
+//     list.map(item => item.username = (item.firstName + item.lastName[0]).toLowerCase() + (new Date().getFullYear() - item.age))
+//     return list
+// }
+// console.log(addUsername([
+//     { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
+//     { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' },
+//     // {"firstName":"Harry","lastName":"K.","country":"Brazil","continent":"Americas","age":19,"language":"Python"}
+// ]))
 // ----------------------------------------------------
-// let now = new Date()
-// let year = now.getFullYear()
-// console.log( year -30)
+
+
 // ----------------------------------------------------
 // ----------------------------------------------------
 // ----------------------------------------------------
