@@ -35,7 +35,7 @@
 // }
 // console.log(capitals('CodEWaRs'))
 
- // task3 | 5 without numbers !!
+// task3 | 5 without numbers !!
 // Write a function that always returns 5
 // Sounds easy right? Just bear in mind that you can't use any of the following characters: 0123456789*+-/
 // -------------------------------------------------------
@@ -197,11 +197,117 @@
 // ]))
 // ----------------------------------------------------
 
+// task11 | Bumps in the road
+// Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.
+//     Unfortunately for you, your drive is very bumpy! Given a string showing either flat road ("_") or bumps ("n"),
+//     work out if you make it home safely. 15 bumps or under, return "Woohoo!", over 15 bumps return "Car Dead".
+// ----------------------------------------------------
+// function bump(x){
+//     return x.split("").filter(item => item === "n").length <= 15 ? "Woohoo!" : "Car Dead"
+// }
+// console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"))
+// ----------------------------------------------------
 
+// const obj = {
+//     "potato": 200,
+//         "tomato": 250,
+//     "banana": 150,
+//     "sugar": 300,
+//     "bread": 20,
+//     "meat": 500,
+//     "flour": 350,
+//     "pepper": 80,
+//     "rice": 100,
+// }
+//
+// const sorobj = (obj) => {
+//     return Object.fromEntries(Object.entries(obj).sort((a,b) => a[1] - b[1]))
+// }
+// console.log(sorobj(obj))
 // ----------------------------------------------------
+
+// task12 | Switcheroo
+// Given a string made up of letters a, b, and/or c, switch the position of letters a and b (change a to b and vice versa). Leave any incidence of c untouched.
+//     Example:
+//     'acb' --> 'bca'
+//     'aabacbaa' --> 'bbabcabb'
 // ----------------------------------------------------
+// function switcheroo(x){
+// return x.split('').map(item => {
+//     if (item === "a"){
+//         return "b"
+//     }else if (item === "b"){
+//         return  "a"
+//     }
+//     return "c"
+// }).join("")
+// }
+// console.log(switcheroo('aaabcccbaaa'))
 // ----------------------------------------------------
+
+// task13 | Sum of digits
+// It involves implementing a program that sums the digits of a non-negative integer. For example, the sum of 3433 digits is 13.
+// Digits can be a number or a string, and you should control it is no undefined and return an empty string.
+//     Digits can be a number or a string, and you should ensure it is not None and return an empty string.
+//     To give you a little more excitement, the program will not only write the result of the sum, but also write all the sums used: 3 + 4 + 3 + 3 = 13.
 // ----------------------------------------------------
+function sum(digits) {
+    const result = digits.split('').reduce((acc, item) => `${acc} + ${item}`)
+    const sum = digits.split('').reduce((acc, item) => +acc + +item)
+    return `${result} = ${sum}`
+}
+
+console.log(sum("3433"))
+// ----------------------------------------------------
+
+// task14 | Remove duplicate words
+// Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+//     Example:
+// Input:
+//     'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+// Output:
+//     'alpha beta gamma delta'
+// ----------------------------------------------------
+// function removeDuplicateWords (s) {
+//     return s.split(" ").filter((item, idx, arr) => idx === arr.indexOf(item)).join(" ")
+// }
+// console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
+// ----------------------------------------------------
+
+// task15 | Generate range of integers
+// Implement a function named generateRange(min, max, step), which takes three arguments and generates a range of integers from min to max,
+// with the step. The first integer is the minimum value, the second is the maximum of the range and the third is the step. (min < max)
+// ----------------------------------------------------
+// function generateRange(min, max, step){
+// let array = []
+//     for (let i = min; i < max; i += step){
+//         array.push(i)
+//     }
+//     return array
+// }
+// console.log(generateRange(2, 10,2))
+// ----------------------------------------------------
+
+// task16 | Last Survivor
+// You are given a string of letters and an array of numbers.
+//     The numbers indicate positions of letters that must be removed, in order, starting from the beginning of the array.
+//     After each removal the size of the string decreases (there is no empty space).
+// Return the only letter left.
+//     Example:
+// let str = "zbk", arr = [0, 1]
+// str = "bk", arr = [1]
+// str = "b", arr = []
+// return 'b'
+// ----------------------------------------------------
+function lastSurvivor(letters, coords) {
+    let arr = letters.split('')
+    for(let i = 0; i < coords.length; i++){
+        arr.splice(coords[i], 1)
+    }
+    return arr.join("")
+}
+
+console.log(lastSurvivor('abc', [1, 1]))
 // ----------------------------------------------------
 // ----------------------------------------------------
 // ----------------------------------------------------
